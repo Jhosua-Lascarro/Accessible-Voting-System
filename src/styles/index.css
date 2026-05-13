@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    min-height: 100dvh;
+    margin: 0;
+    color: #111827;
+    background-color: #f4efe7;
+    background-image:
+      radial-gradient(
+        circle at top,
+        rgba(255, 255, 255, 0.96),
+        rgba(244, 239, 231, 0.98) 45%,
+        rgba(240, 233, 223, 0.98)
+      ),
+      linear-gradient(rgba(17, 24, 39, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(17, 24, 39, 0.04) 1px, transparent 1px);
+    background-size:
+      auto,
+      28px 28px,
+      28px 28px;
+    background-position:
+      0 0,
+      0 0,
+      0 0;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  #root {
+    min-height: 100dvh;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid #111827;
+    outline-offset: 2px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.visually-hidden:focus,
+.visually-hidden:focus-visible {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}

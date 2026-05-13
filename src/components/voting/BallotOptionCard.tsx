@@ -13,12 +13,10 @@ export function BallotOptionCard({
   active = false,
   onChoose,
 }: BallotOptionCardProps) {
-  const accessibleLabel = `${option.title}. ${option.subtitle}. ${option.note}. ${active ? "Seleccionado." : "Pulsa Enter o haz clic para elegir."}`;
-
   return (
     <li>
       <button
-        aria-label={accessibleLabel}
+        aria-labelledby={`option-${option.id}-title option-${option.id}-subtitle option-${option.id}-note`}
         aria-haspopup="dialog"
         aria-pressed={active}
         className={classNames(
@@ -38,23 +36,38 @@ export function BallotOptionCard({
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div className="min-w-0">
-              <h3 className="text-lg font-semibold text-slate-900">
+              <h3
+                id={`option-${option.id}-title`}
+                className="text-lg font-semibold text-slate-900"
+              >
                 {option.title}
               </h3>
-              <p className="mt-1 text-sm font-medium uppercase tracking-[0.22em] text-slate-500">
+              <p
+                id={`option-${option.id}-subtitle`}
+                className="mt-1 text-sm font-medium uppercase tracking-[0.22em] text-slate-500"
+              >
                 {option.subtitle}
               </p>
             </div>
-            <span className="inline-flex items-center gap-2 border border-slate-300 bg-white px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+            <span
+              id={`option-${option.id}-note`}
+              className="inline-flex items-center gap-2 border border-slate-300 bg-white px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500"
+            >
               <SystemMark size="xs" className="border-slate-300 bg-white" />
               <span>{option.note}</span>
             </span>
           </div>
 
-          <p className="mt-3 text-sm leading-6 text-slate-600">
+          <p
+            className="mt-3 text-sm leading-6 text-slate-600"
+            id={`option-${option.id}-desc`}
+          >
             {option.description}
           </p>
-          <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500">
+          <p
+            aria-hidden="true"
+            className="mt-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500"
+          >
             Pulsa Enter o haz clic para elegir
           </p>
         </div>

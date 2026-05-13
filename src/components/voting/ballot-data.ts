@@ -34,56 +34,56 @@ export const guideSteps = [
 
 const candidateOptions: BallotOption[] = [
   {
-    id: "ana-lopez",
-    title: "Ana López",
-    subtitle: "Partido Renovación Ciudadana",
+    id: "luna-ester",
+    title: "Luna Ester",
+    subtitle: "Colectivo Horizonte Ficticio",
     description:
-      "Propone un enfoque centrado en servicios públicos, orden administrativo y seguimiento ciudadano.",
+      "Presenta una propuesta completamente ficticia con enfoque en organización, convivencia y seguimiento del proceso.",
     note: "Lista 01",
     imageSrc: avatar01,
   },
   {
-    id: "carlos-mejia",
-    title: "Carlos Mejía",
-    subtitle: "Alianza Social",
+    id: "noa-brisa",
+    title: "Noa Brisa",
+    subtitle: "Frente Nube Serena",
     description:
-      "Su campaña se enfoca en participación, transparencia y fortalecimiento de barrios y veredas.",
+      "Incluye una ruta ficticia centrada en participación simple, orden visual y lectura clara.",
     note: "Lista 02",
     imageSrc: avatar01,
   },
   {
-    id: "laura-gomez",
-    title: "Laura Gómez",
-    subtitle: "Movimiento Verde",
+    id: "orin-vega",
+    title: "Orin Vega",
+    subtitle: "Movimiento Atlas Azul",
     description:
-      "Presenta una agenda de movilidad limpia, espacios públicos y gestión de recursos responsable.",
+      "Desarrolla una propuesta ficticia con énfasis en ruta breve, control del flujo y claridad de lectura.",
     note: "Lista 03",
     imageSrc: avatar01,
   },
   {
-    id: "miguel-torres",
-    title: "Miguel Torres",
-    subtitle: "Frente de Progreso",
+    id: "sela-orbita",
+    title: "Sela Orbita",
+    subtitle: "Grupo Llama Gris",
     description:
-      "Promueve una administración simple, con prioridades claras y decisiones de impacto local.",
+      "Contiene una línea ficticia sobre acceso directo, navegación simple y confirmación visible.",
     note: "Lista 04",
     imageSrc: avatar01,
   },
   {
-    id: "sofia-rivas",
-    title: "Sofía Rivas",
-    subtitle: "Unión Democrática",
+    id: "taro-elian",
+    title: "Taro Elian",
+    subtitle: "Bloque Aurora Calma",
     description:
-      "Defiende un programa con enfoque social, acceso a oportunidades y control ciudadano.",
+      "Ofrece una propuesta inventada con prioridad en instrucciones cortas, orden y revisión final.",
     note: "Lista 05",
     imageSrc: avatar01,
   },
   {
-    id: "daniel-herrera",
-    title: "Daniel Herrera",
-    subtitle: "Partido del Pueblo",
+    id: "mila-darien",
+    title: "Mila Darien",
+    subtitle: "Liga Espejo Cero",
     description:
-      "Cierra la oferta con una propuesta de representación directa y seguimiento a compromisos.",
+      "Cierra el listado con una opción ficticia pensada solo para demostrar el flujo del tarjetón.",
     note: "Lista 06",
     imageSrc: avatar01,
   },
@@ -100,8 +100,8 @@ export const blankVoteOption: BallotOption = {
 };
 
 export const ballotOptions: BallotOption[] = [
-  ...candidateOptions,
   blankVoteOption,
+  ...candidateOptions,
 ];
 
 export const flowSteps = [

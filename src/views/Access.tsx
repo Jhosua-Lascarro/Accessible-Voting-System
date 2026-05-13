@@ -155,7 +155,7 @@ export default function Access() {
       </div>
 
       <Modal
-        description="Si continúas, se iniciará el proceso de votación y se limpiará cualquier avance previo de esta sesión."
+        description="Si continúas, se iniciará el proceso de votación."
         footer={
           <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
             <Button variant="secondary" onClick={closeContinueModal}>

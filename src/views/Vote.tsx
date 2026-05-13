@@ -23,7 +23,7 @@ export default function Vote() {
     }
 
     announce(
-      "Tarjetón. Paso 3 de 4. Selecciona una sola opción y confirma antes de registrar el voto.",
+      "Tarjetón. Paso 3 de 4. La primera opción es el voto en blanco. Selecciona una sola opción y confirma antes de registrar el voto.",
     );
   }, [announce, isSubmitted]);
 
@@ -96,8 +96,9 @@ export default function Vote() {
           </div>
         </div>
         <p className="max-w-2xl text-base leading-7 text-slate-600">
-          Toca una opción o recórrela con el teclado. Después confirma en la
-          ventana emergente para registrar tu voto y pasar al siguiente paso.
+          La primera opción es el voto en blanco. Toca una opción o recórrela
+          con el teclado. Después confirma en la ventana emergente para
+          registrar tu voto y pasar al siguiente paso.
         </p>
       </aside>
 

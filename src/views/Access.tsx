@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import { useAccessibilityAnnouncer } from "../components/ui/AccessibilityAnnouncer";
 import { Button } from "../components/ui/Button";
+import { Badge } from "../components/ui/Badge";
 import { Modal } from "../components/ui/Modal";
 import { SystemMark } from "../components/ui/SystemMark";
 import { guideSteps } from "../components/voting/ballot-data";
@@ -78,18 +79,27 @@ export default function Access() {
           muestra qué ocurre en cada paso y qué debes esperar al avanzar.
         </p>
 
-        <div className="border border-slate-300 bg-slate-50 p-4 sm:p-5">
-          <div className="flex items-center gap-3">
-            <SystemMark size="xs" className="border-slate-300 bg-slate-50" />
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-500">
-              Lo importante
+        <div
+          className="border border-slate-300 bg-slate-50 p-4 sm:p-5"
+          role="region"
+          aria-labelledby="access-guide-intro"
+        >
+          <h2
+            className="text-xl font-semibold tracking-tight text-slate-900"
+            id="access-guide-intro"
+          >
+            Cómo usar esta guía
+          </h2>
+          <div className="mt-3 flex flex-wrap items-center gap-3">
+            <Badge tone="neutral">Audio guía personalizada</Badge>
+            <p className="text-sm leading-6 text-slate-600">
+              Por ahora no está disponible.
             </p>
           </div>
-          <ul className="mt-3 space-y-3 text-sm leading-6 text-slate-600">
-            <li>1. Verifica el paso actual antes de continuar.</li>
-            <li>2. Confirma el aviso cuando quieras avanzar al tarjetón.</li>
-            <li>3. En la siguiente pantalla solo podrás marcar una opción.</li>
-          </ul>
+          <p className="mt-3 text-sm leading-6 text-slate-600">
+            Puedes leer directamente los apartados que te interesen y, cuando
+            termines, continuar para pasar al tarjetón.
+          </p>
         </div>
       </aside>
 
@@ -99,18 +109,17 @@ export default function Access() {
           role="region"
           aria-labelledby="access-route-title"
         >
-          <div className="flex items-center gap-3">
-            <SystemMark size="xs" className="border-slate-300 bg-slate-50" />
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-500">
-              Ruta del proceso
-            </p>
-          </div>
           <h3
             className="text-xl font-semibold tracking-tight text-slate-900"
             id="access-route-title"
           >
             Así se usa el sistema
           </h3>
+          <p className="text-sm leading-6 text-slate-600">
+            Lee los pasos en el orden que prefieras. El recorrido está pensado
+            para ser breve, claro y fácil de seguir con teclado o lector de
+            pantalla.
+          </p>
         </div>
 
         <ol className="grid gap-3">

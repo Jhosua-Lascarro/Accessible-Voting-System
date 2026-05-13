@@ -6,12 +6,34 @@ type StepIndicatorProps = {
 };
 
 export function StepIndicator({ currentStepIndex }: StepIndicatorProps) {
+  const currentStep = flowSteps[currentStepIndex];
+
   return (
     <nav
       aria-label={`Progreso de la votación, ${flowSteps.length} pasos`}
       className="border-b border-slate-300 bg-white"
     >
-      <ol className="grid gap-px bg-slate-300 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="border-b border-slate-300 bg-slate-300 md:hidden">
+        <div
+          aria-current="step"
+          className="flex items-start gap-4 bg-white px-4 py-4"
+        >
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-white bg-slate-900 text-sm font-semibold text-white">
+            {String(currentStepIndex + 1).padStart(2, "0")}
+          </span>
+          <div className="min-w-0">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-500">
+              {currentStep.title}
+            </p>
+            <p className="mt-1 text-sm leading-6 text-slate-500">
+              {currentStep.description}
+            </p>
+            <span className="visually-hidden">Paso actual.</span>
+          </div>
+        </div>
+      </div>
+
+      <ol className="hidden gap-px bg-slate-300 md:grid md:grid-cols-4">
         {flowSteps.map((step, index) => {
           const isCurrent = index === currentStepIndex;
           const isComplete = index < currentStepIndex;
@@ -42,9 +64,6 @@ export function StepIndicator({ currentStepIndex }: StepIndicatorProps) {
               <div className="min-w-0">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-500">
                   {step.title}
-                </p>
-                <p className="mt-1 text-sm text-slate-500">
-                  {step.description}
                 </p>
                 <span className="visually-hidden">
                   {isCurrent

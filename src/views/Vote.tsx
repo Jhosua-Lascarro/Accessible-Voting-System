@@ -33,7 +33,7 @@ export default function Vote() {
     }
 
     announce(
-      `Seleccionaste ${pendingOption.title}. Se abrió la confirmación para revisar tu elección.`,
+      `Seleccionaste ${pendingOption.title}, ${pendingOption.subtitle}. Se abrió la confirmación para revisar tu elección.`,
     );
   }, [announce, pendingOption]);
 
@@ -96,9 +96,8 @@ export default function Vote() {
           </div>
         </div>
         <p className="max-w-2xl text-base leading-7 text-slate-600">
-          Usa el cursor o el teclado para elegir un candidato. Al confirmar en
-          la ventana emergente, la selección quedará registrada y pasarás al
-          siguiente paso.
+          Toca una opción o recórrela con el teclado. Después confirma en la
+          ventana emergente para registrar tu voto y pasar al siguiente paso.
         </p>
       </aside>
 
@@ -121,8 +120,8 @@ export default function Vote() {
             Opciones disponibles
           </h3>
           <p className="text-sm leading-6 text-slate-600">
-            Selecciona una sola opción. El sistema abrirá una confirmación antes
-            de registrar la elección.
+            Elige solo una opción. Luego revisa y confirma en la ventana que se
+            abrirá antes de registrar tu voto.
           </p>
         </div>
         <div className="max-h-[62dvh] overflow-y-auto pr-1 lg:max-h-[calc(100dvh-18rem)]">

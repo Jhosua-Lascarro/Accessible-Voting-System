@@ -1,7 +1,6 @@
 import { classNames } from "../../lib/classNames";
 import { SystemMark } from "../ui/SystemMark";
 import type { BallotOption } from "./ballot-data";
-import { useId } from "react";
 
 type BallotOptionCardProps = {
   option: BallotOption;
@@ -14,18 +13,14 @@ export function BallotOptionCard({
   active = false,
   onChoose,
 }: BallotOptionCardProps) {
-  const titleId = useId();
-  const subtitleId = useId();
-  const noteId = useId();
-  const descriptionId = useId();
-  const instructionId = useId();
+  const accessibleLabel = `${option.title}. ${option.subtitle}. ${option.note}. ${active ? "Seleccionado." : "Pulsa Enter o haz clic para elegir."}`;
 
   return (
     <li>
       <button
-        aria-describedby={`${descriptionId} ${instructionId}`}
+        aria-label={accessibleLabel}
         aria-haspopup="dialog"
-        aria-labelledby={`${titleId} ${subtitleId} ${noteId}`}
+        aria-pressed={active}
         className={classNames(
           "flex w-full items-stretch gap-4 border border-slate-300 bg-white p-4 text-left transition-colors hover:border-slate-900 focus-visible:border-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/10",
           active && "border-slate-900 bg-slate-50",
@@ -43,35 +38,23 @@ export function BallotOptionCard({
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div className="min-w-0">
-              <h3 className="text-lg font-semibold text-slate-900" id={titleId}>
+              <h3 className="text-lg font-semibold text-slate-900">
                 {option.title}
               </h3>
-              <p
-                className="mt-1 text-sm font-medium uppercase tracking-[0.22em] text-slate-500"
-                id={subtitleId}
-              >
+              <p className="mt-1 text-sm font-medium uppercase tracking-[0.22em] text-slate-500">
                 {option.subtitle}
               </p>
             </div>
-            <span
-              className="inline-flex items-center gap-2 border border-slate-300 bg-white px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500"
-              id={noteId}
-            >
+            <span className="inline-flex items-center gap-2 border border-slate-300 bg-white px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
               <SystemMark size="xs" className="border-slate-300 bg-white" />
               <span>{option.note}</span>
             </span>
           </div>
 
-          <p
-            className="mt-3 text-sm leading-6 text-slate-600"
-            id={descriptionId}
-          >
+          <p className="mt-3 text-sm leading-6 text-slate-600">
             {option.description}
           </p>
-          <p
-            className="mt-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500"
-            id={instructionId}
-          >
+          <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500">
             Pulsa Enter o haz clic para elegir
           </p>
         </div>

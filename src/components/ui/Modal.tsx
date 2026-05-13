@@ -56,19 +56,27 @@ export function Modal({
 
     const previousFocus = document.activeElement as HTMLElement | null;
 
-    const focusFirstElement = () => {
+    const focusTitle = () => {
+      const titleElement = document.getElementById(titleId);
+
+      if (titleElement) {
+        titleElement.focus();
+        return;
+      }
+
       const focusableElements = Array.from(
         dialogNode.querySelectorAll<HTMLElement>(focusableSelector),
       ).filter((element) => !element.hasAttribute("disabled"));
 
       if (focusableElements.length > 0) {
         focusableElements[0].focus();
-      } else {
-        dialogNode.focus();
+        return;
       }
+
+      dialogNode.focus();
     };
 
-    const animationFrame = window.requestAnimationFrame(focusFirstElement);
+    const animationFrame = window.requestAnimationFrame(focusTitle);
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -147,6 +155,7 @@ export function Modal({
             </div>
             <h2
               id={titleId}
+              tabIndex={-1}
               className="text-2xl font-semibold tracking-tight text-slate-900"
             >
               {title}

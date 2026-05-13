@@ -3,7 +3,6 @@ import { Outlet, useLocation } from "react-router-dom";
 
 import { SystemMark } from "../components/ui/SystemMark";
 import { StepIndicator } from "../components/voting/StepIndicator";
-import { flowSteps } from "../components/voting/ballot-data";
 
 function getCurrentStepIndex(pathname: string) {
   if (pathname.startsWith("/authentication")) {
@@ -50,21 +49,6 @@ export default function MainLayout() {
                   Registro de voto
                 </h1>
               </div>
-            </div>
-            <div className="max-w-sm border border-slate-300 bg-slate-50 p-4 text-sm leading-6 text-slate-600">
-              <div className="flex items-center gap-3">
-                <SystemMark
-                  size="xs"
-                  className="border-slate-300 bg-slate-50"
-                />
-                <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-500">
-                  Paso actual
-                </p>
-              </div>
-              <p className="mt-2">
-                {flowSteps[currentStepIndex].title}:{" "}
-                {flowSteps[currentStepIndex].description}
-              </p>
             </div>
           </div>
         </header>

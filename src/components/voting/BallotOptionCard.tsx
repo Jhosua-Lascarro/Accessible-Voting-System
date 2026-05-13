@@ -17,6 +17,7 @@ export function BallotOptionCard({
     <li>
       <button
         aria-labelledby={`option-${option.id}-title option-${option.id}-subtitle option-${option.id}-note`}
+        aria-describedby={`option-${option.id}-desc`}
         aria-haspopup="dialog"
         aria-pressed={active}
         className={classNames(

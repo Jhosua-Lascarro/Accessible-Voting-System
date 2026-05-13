@@ -126,16 +126,27 @@ export default function Access() {
           {guideSteps.map((step, index) => (
             <li
               key={step.title}
+              id={`guide-step-${index}`}
+              tabIndex={0}
+              role="group"
+              aria-labelledby={`guide-step-${index}-title`}
+              aria-describedby={`guide-step-${index}-desc`}
               className="flex items-start gap-4 border border-slate-300 bg-slate-50 p-4"
             >
               <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-slate-900 bg-white text-sm font-semibold text-slate-900">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <div className="min-w-0">
-                <p className="text-lg font-semibold text-slate-900">
+                <p
+                  id={`guide-step-${index}-title`}
+                  className="text-lg font-semibold text-slate-900"
+                >
                   {step.title}
                 </p>
-                <p className="mt-1 text-sm leading-6 text-slate-600">
+                <p
+                  id={`guide-step-${index}-desc`}
+                  className="mt-1 text-sm leading-6 text-slate-600"
+                >
                   {step.description}
                 </p>
               </div>
